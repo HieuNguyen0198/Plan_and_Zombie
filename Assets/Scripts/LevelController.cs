@@ -10,6 +10,7 @@ public class LevelController : MonoBehaviour
 
     int numberOfAttackers = 0;
     bool levelTimerFinished = false;
+    bool final = false;
 
     private void Start()
     {
@@ -25,10 +26,20 @@ public class LevelController : MonoBehaviour
     public void AttackerKilled()
     {
         numberOfAttackers--;
-        if(numberOfAttackers <= 2 && levelTimerFinished)
+        if(levelTimerFinished)
         {
-            StopSpawners();
-            StartCoroutine(HandleWinCondition());
+            //StopSpawners();
+            //StartCoroutine(HandleWinCondition());
+            FinalWave();
+            if(numberOfAttackers >= 10)
+            {
+                StopSpawners();
+                final = true;
+            }
+            if (numberOfAttackers <= 2 && final)
+            {
+                StartCoroutine(HandleWinCondition());
+            }
         }
     }
 
@@ -37,6 +48,7 @@ public class LevelController : MonoBehaviour
         winLabel.SetActive(true);
         GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(waitToLoad);
+        Time.timeScale = 0;
         FindObjectOfType<LevelLoader>().LoadNextScene();
     }
 
@@ -50,7 +62,7 @@ public class LevelController : MonoBehaviour
     public void LevelTimeFinished()
     {
         levelTimerFinished = true;
-        StopSpawners();
+        //StopSpawners();
     }
 
     private void StopSpawners()
@@ -61,4 +73,14 @@ public class LevelController : MonoBehaviour
             spawner.StopSpawning();
         }
     }
+
+    private void FinalWave()
+    {
+        AttackerSpawner[] spawnedArray = FindObjectsOfType<AttackerSpawner>();
+        foreach (AttackerSpawner spawner in spawnedArray)
+        {
+            spawner.FinalWave();
+        }
+    }
+
 }

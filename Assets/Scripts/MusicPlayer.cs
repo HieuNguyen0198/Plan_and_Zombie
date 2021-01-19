@@ -9,9 +9,9 @@ public class MusicPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(this);
         audioSource = GetComponent<AudioSource>();
         audioSource.volume = PlayerPrefsController.GetMasterVolume();
+        //DontDestroyOnLoad(this);
     }
 
     public void SetVolume(float volume)

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
-    [Range (0f, 5f)]
+    //[Range(0f, 5f)]
+    [SerializeField] float speed;
+    float defaultSpeed =  0;
     float currentSpeed = 1f;
     GameObject currentTarget;
 
@@ -22,9 +24,37 @@ public class Attacker : MonoBehaviour
         }
     }
 
-    public void SetMovementSpeed(float speed)
+    public void SetMovementSpeed()
     {
         currentSpeed = speed;
+    }
+
+    //lam cham
+    public void SetSlowMomentSpeed()
+    {
+        defaultSpeed = speed;
+        speed = speed / 4;
+        //currentSpeed = speed;
+    }
+    
+    //bi choang
+    public void SetStun()
+    {
+        defaultSpeed = speed;
+        speed = 0;
+        currentSpeed = 0;
+    }
+
+    //dung im
+    public void Set0()
+    {
+        currentSpeed = 0;
+    }
+
+    //khoi phuc
+    public void DefaultSpeed()
+    {
+        speed = defaultSpeed;
     }
 
 

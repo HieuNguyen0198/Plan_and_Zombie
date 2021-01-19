@@ -27,7 +27,7 @@ public class LiveDisplay : MonoBehaviour
         lives -= damage;
         UpdateDisplay();
 
-        if(lives <= 0)
+        if(lives < 1)
         {
             FindObjectOfType<LevelController>().HandleLoseCondition();
             //FindObjectOfType<LevelLoader>().LoadYouLose();

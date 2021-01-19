@@ -20,7 +20,19 @@ public class Projectilee : MonoBehaviour
         if(attacker && health)
         {
             health.DealDamage(damage);
+
+            //lam cham hay stun o cho nay
+            //attacker.SetStun();
+            //attacker.SetSlowMomentSpeed();
+
+            //khoi phuc o cho nay
+
+      
+           
+          
+            //huy vu khi
             Destroy(gameObject);
         }
     }
+ 
 }

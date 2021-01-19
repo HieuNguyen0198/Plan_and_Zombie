@@ -8,19 +8,29 @@ public class AttackerSpawner : MonoBehaviour
     [SerializeField] float maxSpawnDelay = 5f;
     [SerializeField] Attacker[] attackerPrefabArray;
     bool spawn = true;
+    bool final = false;
 
     IEnumerator Start()
     {
         while (spawn)
         {
-            yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
-            SpawnAttacker();
+            if(!final)
+            {
+                yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
+                SpawnAttacker();
+            }
+            else
+            {
+                yield return new WaitForSeconds(Random.Range(1f, 1f));
+                SpawnAttacker();
+            }
         }
     }
 
     public void StopSpawning()
     {
         spawn = false;
+        final = false;
     }
 
     private void SpawnAttacker()
@@ -33,5 +43,11 @@ public class AttackerSpawner : MonoBehaviour
     {
         Attacker newAttacker = Instantiate(myAttacker, transform.position, transform.rotation) as Attacker;
         newAttacker.transform.parent = transform;
+    }
+
+    //tang do kho
+    public void FinalWave()
+    {
+        final = true;
     }
 }
