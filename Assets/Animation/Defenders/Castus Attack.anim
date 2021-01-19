@@ -776,6 +776,6 @@ AnimationClip:
     functionName: Fire
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 1
+    floatParameter: 50
     intParameter: 0
     messageOptions: 0

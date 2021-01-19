@@ -6,21 +6,55 @@ public class Attacker : MonoBehaviour
 {
     [Range (0f, 5f)]
     float currentSpeed = 1f;
-    // Start is called before the first frame update
+    GameObject currentTarget;
+
+    private void Awake()
+    {
+        FindObjectOfType<LevelController>().AttackerSpawned();
+    }
+
+    private void OnDestroy()
+    {
+        LevelController levelController = FindObjectOfType<LevelController>();
+        if(levelController != null)
+        {
+            levelController.AttackerKilled();
+        }
+    }
 
     public void SetMovementSpeed(float speed)
     {
         currentSpeed = speed;
     }
 
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector2.left * currentSpeed * Time.deltaTime);
+        UpdateAnimationSate();
+    }
+
+    private void UpdateAnimationSate()
+    {
+        if(!currentTarget)
+        {
+            GetComponent<Animator>().SetBool("IsAttacking", false);
+        }
+    }
+
+    public void Attack(GameObject target)
+    {
+        GetComponent<Animator>().SetBool("IsAttacking", true);
+        currentTarget = target;
+    }
+
+    public void StrikeCurrentTarget(float damage)
+    {
+        if (!currentTarget) { return; }
+        Health health = currentTarget.GetComponent<Health>();
+        if(health)
+        {
+            health.DealDamage(damage);
+        }
     }
 }
