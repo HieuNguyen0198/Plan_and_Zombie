@@ -43,6 +43,7 @@ public class LevelController : MonoBehaviour
     public void HandleLoseCondition()
     {
         loseLabel.SetActive(true);
+        GetComponent<AudioSource>().Play();
         Time.timeScale = 0;
     }
 
