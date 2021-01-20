@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerPrefsController : MonoBehaviour
 {
@@ -46,4 +47,14 @@ public class PlayerPrefsController : MonoBehaviour
     {
         return PlayerPrefs.GetFloat(DIFFICULTY_KEY);
     }
+
+    public static void SetLevel()
+    {
+        PlayerPrefs.SetInt("level", SceneManager.GetActiveScene().buildIndex);
+    }
+    
+    public static int GetLevel()
+    {
+        return PlayerPrefs.GetInt("level");
+    }    
 }

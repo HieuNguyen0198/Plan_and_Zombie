@@ -38,6 +38,7 @@ public class LevelLoader : MonoBehaviour
     public void LoadMainMenu()
     {
         Time.timeScale = 1;
+        PlayerPrefsController.SetLevel();
         SceneManager.LoadScene("Start Screen 1");
     }
 
@@ -56,4 +57,11 @@ public class LevelLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Lose Screen");
     }
+
+    public void loadCoutinueGame()
+    {
+        Time.timeScale = 1;
+        int saveLevel = PlayerPrefsController.GetLevel() - 1;
+        SceneManager.LoadScene(currentSceneIndex + saveLevel);
+    }    
 }
