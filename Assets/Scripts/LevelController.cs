@@ -8,6 +8,8 @@ public class LevelController : MonoBehaviour
     [SerializeField] GameObject winLabel;
     [SerializeField] GameObject loseLabel;
     [SerializeField] GameObject finalLabel;
+    [SerializeField] GameObject menuLabel;
+    [SerializeField] int endGame;
 
     int numberOfAttackers = 0;
     bool levelTimerFinished = false;
@@ -21,6 +23,7 @@ public class LevelController : MonoBehaviour
         winLabel.SetActive(false);
         loseLabel.SetActive(false);
         finalLabel.SetActive(false);
+        menuLabel.SetActive(false);
     }
 
     public void AttackerSpawned()
@@ -46,7 +49,7 @@ public class LevelController : MonoBehaviour
             {
                 StopSpawners();
             }
-            if (numberOfAttackers <= 2 && final)
+            if (numberOfAttackers <= endGame && final)
             {
                 HandleWinCondition2();
                 //StartCoroutine(HandleWinCondition());
@@ -97,6 +100,18 @@ public class LevelController : MonoBehaviour
     {
         levelTimerFinished = true;
         //StopSpawners();
+    }
+
+    public void Menu()
+    {
+        menuLabel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void Resume()
+    {
+        menuLabel.SetActive(false);
+        Time.timeScale = 1;
     }
 
     private void StopSpawners()
