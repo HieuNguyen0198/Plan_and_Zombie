@@ -29,6 +29,7 @@ public class LiveDisplay : MonoBehaviour
 
         if(lives < 1)
         {
+            FindObjectOfType<LevelController>().setLose();
             FindObjectOfType<LevelController>().HandleLoseCondition();
             //FindObjectOfType<LevelLoader>().LoadYouLose();
         }

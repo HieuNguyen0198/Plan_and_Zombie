@@ -14,6 +14,7 @@ public class LevelController : MonoBehaviour
     int numberOfAttackers = 0;
     bool levelTimerFinished = false;
     bool final = false;
+    bool lose = false;
     //
     int phase = 0;
 
@@ -33,7 +34,7 @@ public class LevelController : MonoBehaviour
     public void AttackerKilled()
     {
         numberOfAttackers--;
-        if (levelTimerFinished)
+        if (levelTimerFinished && lose == false)
         {
             //StopSpawners();
             //StartCoroutine(HandleWinCondition());
@@ -48,7 +49,7 @@ public class LevelController : MonoBehaviour
                 //StartCoroutine(HandleWinCondition());
             }
         }
-        else
+        else if(lose == false)
         {
             if (final)
             {
@@ -99,6 +100,11 @@ public class LevelController : MonoBehaviour
         levelTimerFinished = true;
         final = false;
         //StopSpawners();
+    }
+
+    public void setLose()
+    {
+        lose = true;
     }
 
     public void Final()

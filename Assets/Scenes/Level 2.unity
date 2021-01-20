@@ -523,6 +523,11 @@ PrefabInstance:
       propertyPath: menuLabel
       value: 
       objectReference: {fileID: 361403649822931905}
+    - target: {fileID: 7608935126398148717, guid: 78936b79a74240346bb7ead87bfedc5f,
+        type: 3}
+      propertyPath: endGame
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78936b79a74240346bb7ead87bfedc5f, type: 3}
 --- !u!1 &826426066
@@ -2598,6 +2603,27 @@ PrefabInstance:
       propertyPath: defenderPrefab
       value: 
       objectReference: {fileID: 166420665}
+    - target: {fileID: 6998809187396661374, guid: 5a52c94f49f219645a53340cf7edddaf,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 07c4328d912e9af4c82c4088f88ed81f,
+        type: 3}
+    - target: {fileID: 6998809187396661374, guid: 5a52c94f49f219645a53340cf7edddaf,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.615
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998809187396661374, guid: 5a52c94f49f219645a53340cf7edddaf,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.885
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998809187396661374, guid: 5a52c94f49f219645a53340cf7edddaf,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7067819864442472639, guid: 5a52c94f49f219645a53340cf7edddaf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2828,6 +2854,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4517616790604075999, guid: 80f8d92de34e25d4dbafbbe6877048c6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7517929661485990397, guid: 44fa086cf4a7bc441924efc0d9c99a76,
+        type: 3}
     - target: {fileID: 4865133824690022783, guid: 80f8d92de34e25d4dbafbbe6877048c6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2838,6 +2870,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1036271761}
+    - target: {fileID: 9104625818942322511, guid: 80f8d92de34e25d4dbafbbe6877048c6,
+        type: 3}
+      propertyPath: m_Text
+      value: You got the Gnome!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80f8d92de34e25d4dbafbbe6877048c6, type: 3}
 --- !u!1001 &7499182111892345534

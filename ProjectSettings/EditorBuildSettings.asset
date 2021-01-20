@@ -19,28 +19,19 @@ EditorBuildSettings:
     guid: 4d4cb0a6b97721946bf09aa6fbb7f27f
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
-    guid: 163638a409aa4394ab3bb7f64b87b774
+    guid: 17176ec4c0669d349b5206acd824e9b3
   - enabled: 1
     path: Assets/Scenes/Level 4.unity
-    guid: 90386135361c6704b908854976986764
+    guid: e3ffcf254934ac74192adc1e06612971
   - enabled: 1
     path: Assets/Scenes/Level 5.unity
-    guid: 6e9bb1b8d442feb46bad979fac644dd5
+    guid: 4c9dbf2968d94c84a83a8cd3fda946d7
   - enabled: 1
     path: Assets/Scenes/Level 6.unity
-    guid: 46861cfae761f644db4c53a31f964f2b
+    guid: 581e59826bb8e64409981b7a78ab6092
   - enabled: 1
     path: Assets/Scenes/Level 7.unity
-    guid: 031c43c08dcbc0c4082100a50f16aa43
-  - enabled: 1
-    path: Assets/Scenes/Level 8.unity
-    guid: 81857b9e1bd7e9448a1a873591591886
-  - enabled: 1
-    path: Assets/Scenes/Level 9.unity
-    guid: f92582eb1c39e0849b9e4cd72d7fd05d
-  - enabled: 1
-    path: Assets/Scenes/Level 10.unity
-    guid: 7e09c2846a8240f4db7972c0382a4bad
+    guid: ecd0fbf52caa68a4c92ca1ac17e88078
   - enabled: 1
     path: Assets/Scenes/Option Screen.unity
     guid: a8105c4881cf4644ea229e5dbbf9fab8
