@@ -7,6 +7,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] float waitToLoad = 4f;
     [SerializeField] GameObject winLabel;
     [SerializeField] GameObject loseLabel;
+    [SerializeField] GameObject finalLabel;
 
     int numberOfAttackers = 0;
     bool levelTimerFinished = false;
@@ -16,6 +17,7 @@ public class LevelController : MonoBehaviour
     {
         winLabel.SetActive(false);
         loseLabel.SetActive(false);
+        finalLabel.SetActive(false);
     }
 
     public void AttackerSpawned()
@@ -30,26 +32,39 @@ public class LevelController : MonoBehaviour
         {
             //StopSpawners();
             //StartCoroutine(HandleWinCondition());
-            FinalWave();
-            if(numberOfAttackers >= 10)
+            if(!final)
+            {
+                FinalWave();
+                StartCoroutine(LateCall());
+                final = true;
+            }
+
+            if (numberOfAttackers >= 10)
             {
                 StopSpawners();
-                final = true;
             }
             if (numberOfAttackers <= 2 && final)
             {
-                StartCoroutine(HandleWinCondition());
+                HandleWinCondition2();
+                //StartCoroutine(HandleWinCondition());
             }
         }
     }
 
-    IEnumerator HandleWinCondition()
+    /*IEnumerator HandleWinCondition()
     {
         winLabel.SetActive(true);
         GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(waitToLoad);
         Time.timeScale = 0;
         FindObjectOfType<LevelLoader>().LoadNextScene();
+    }*/
+
+    public void HandleWinCondition2()
+    {
+        winLabel.SetActive(true);
+        GetComponent<AudioSource>().Play();
+        //Time.timeScale = 0;
     }
 
     public void HandleLoseCondition()
@@ -76,6 +91,7 @@ public class LevelController : MonoBehaviour
 
     private void FinalWave()
     {
+        finalLabel.SetActive(true);
         AttackerSpawner[] spawnedArray = FindObjectsOfType<AttackerSpawner>();
         foreach (AttackerSpawner spawner in spawnedArray)
         {
@@ -83,4 +99,10 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    IEnumerator LateCall()
+    {
+        yield return new WaitForSeconds(3f);
+        finalLabel.SetActive(false);
+        //Do Function here...
+    }
 }

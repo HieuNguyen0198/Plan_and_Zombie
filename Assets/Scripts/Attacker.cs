@@ -6,13 +6,16 @@ public class Attacker : MonoBehaviour
 {
     //[Range(0f, 5f)]
     [SerializeField] float speed;
-    float defaultSpeed =  0;
     float currentSpeed = 1f;
+    float defaultSpeed = 0;
+    bool attacking = false;
     GameObject currentTarget;
+
 
     private void Awake()
     {
         FindObjectOfType<LevelController>().AttackerSpawned();
+        defaultSpeed = speed;
     }
 
     private void OnDestroy()
@@ -29,20 +32,37 @@ public class Attacker : MonoBehaviour
         currentSpeed = speed;
     }
 
+    public float getSpeed()
+    {
+        return speed;
+    }
+
     //lam cham
     public void SetSlowMomentSpeed()
     {
-        defaultSpeed = speed;
-        speed = speed / 4;
-        //currentSpeed = speed;
+        //defaultSpeed = speed;
+        speed = defaultSpeed/2;
+        StartCoroutine(LateCall());
     }
     
     //bi choang
     public void SetStun()
     {
-        defaultSpeed = speed;
+        //defaultSpeed = speed;
         speed = 0;
         currentSpeed = 0;
+        StartCoroutine(LateCall());
+    }
+
+    //tu hoi phuc sau 3s
+    IEnumerator LateCall()
+    {
+        yield return new WaitForSeconds(3f);
+        if (GetComponent<Animator>().GetBool("IsAttacking") == false)
+        {
+            speed = defaultSpeed;
+            currentSpeed = defaultSpeed;
+        }      
     }
 
     //dung im
@@ -50,13 +70,6 @@ public class Attacker : MonoBehaviour
     {
         currentSpeed = 0;
     }
-
-    //khoi phuc
-    public void DefaultSpeed()
-    {
-        speed = defaultSpeed;
-    }
-
 
     void Update()
     {
@@ -69,6 +82,7 @@ public class Attacker : MonoBehaviour
         if(!currentTarget)
         {
             GetComponent<Animator>().SetBool("IsAttacking", false);
+            //attacking = false;
         }
     }
 
@@ -76,11 +90,17 @@ public class Attacker : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("IsAttacking", true);
         currentTarget = target;
+        //attacking = true;
     }
 
     public void StrikeCurrentTarget(float damage)
     {
-        if (!currentTarget) { return; }
+        if (!currentTarget) 
+        {
+            //attacking = false;
+            return; 
+        }
+        attacking = true;
         Health health = currentTarget.GetComponent<Health>();
         if(health)
         {
