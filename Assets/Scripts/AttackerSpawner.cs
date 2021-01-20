@@ -9,15 +9,31 @@ public class AttackerSpawner : MonoBehaviour
     [SerializeField] Attacker[] attackerPrefabArray;
     bool spawn = true;
     bool final = false;
+    //
+    int phase = 0;
 
     IEnumerator Start()
     {
         while (spawn)
         {
-            if(!final)
+            if (!final)
             {
-                yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
-                SpawnAttacker();
+                if (phase == 2)
+                {
+                    yield return new WaitForSeconds(Random.Range(minSpawnDelay,maxSpawnDelay));
+                    SpawnAttacker();
+                }
+                else if (phase == 3)
+                {
+                    yield return new WaitForSeconds(Random.Range(1f, maxSpawnDelay - 3f));
+                    SpawnAttacker();
+                }
+                else
+                {
+                    //phase 1
+                    yield return new WaitForSeconds(Random.Range(3f, 30f));
+                    SpawnAttacker();
+                }
             }
             else
             {
@@ -39,13 +55,25 @@ public class AttackerSpawner : MonoBehaviour
         Spawn(attackerPrefabArray[attackerIndex]);
     }
 
-   private void Spawn(Attacker myAttacker)
+    private void Spawn(Attacker myAttacker)
     {
         Attacker newAttacker = Instantiate(myAttacker, transform.position, transform.rotation) as Attacker;
         newAttacker.transform.parent = transform;
     }
 
+
     //tang do kho
+    public void phase2()
+    {
+        phase = 2;
+    }
+
+    public void phase3()
+    {
+        phase = 3;
+    }
+
+
     public void FinalWave()
     {
         final = true;

@@ -15,10 +15,21 @@ public class GameTimer : MonoBehaviour
         GetComponent<Slider>().value = Time.timeSinceLevelLoad / levelTime;
 
         bool timerFinished = (Time.timeSinceLevelLoad >= levelTime);
-        if(timerFinished)
+        bool timerPhase2 = (Time.timeSinceLevelLoad >= levelTime - levelTime);
+        bool timerPhase3 = (Time.timeSinceLevelLoad >= levelTime/2);
+
+        if (timerFinished)
         {
             FindObjectOfType<LevelController>().LevelTimeFinished();
             triggeredLevelFinished = true;
         }
+        else if (timerPhase3)
+        {
+            FindObjectOfType<LevelController>().SetPhase3();
+        }
+        else if(timerPhase2)
+        {
+            FindObjectOfType<LevelController>().SetPhase2();
+        }    
     }
 }
