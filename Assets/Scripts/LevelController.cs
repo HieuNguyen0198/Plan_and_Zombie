@@ -14,7 +14,6 @@ public class LevelController : MonoBehaviour
     int numberOfAttackers = 0;
     bool levelTimerFinished = false;
     bool final = false;
-
     //
     int phase = 0;
 
@@ -38,26 +37,25 @@ public class LevelController : MonoBehaviour
         {
             //StopSpawners();
             //StartCoroutine(HandleWinCondition());
-            if (!final)
-            {            
-                FinalWave();
-                StartCoroutine(LateCall());
-                final = true;
-            }
+            
 
-            if (numberOfAttackers >= 10)
+            StopSpawners();
+
+            if (numberOfAttackers <= endGame)
             {
                 StopSpawners();
-            }
-            if (numberOfAttackers <= endGame && final)
-            {
                 HandleWinCondition2();
                 //StartCoroutine(HandleWinCondition());
             }
         }
         else
         {
-            if (phase == 2)
+            if (final)
+            {
+                FinalWave();
+                StartCoroutine(LateCall());              
+            }
+            else if (phase == 2)
             {
                 Phase2();
             }
@@ -99,7 +97,19 @@ public class LevelController : MonoBehaviour
     public void LevelTimeFinished()
     {
         levelTimerFinished = true;
+        final = false;
         //StopSpawners();
+    }
+
+    public void Final()
+    {
+        final = true;
+        //StopSpawners();
+    }
+
+    public void Ffinal()
+    {
+        final = false;
     }
 
     public void Menu()
@@ -163,7 +173,7 @@ public class LevelController : MonoBehaviour
 
     IEnumerator LateCall()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         finalLabel.SetActive(false);
         //Do Function here...
     }

@@ -81,6 +81,8 @@
     <Compile Include="Assets\Scripts\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\OptioneController.cs" />
     <Compile Include="Assets\Scripts\PlayerPrefsController.cs" />
+    <Compile Include="Assets\Scripts\ProjectileSlow.cs" />
+    <Compile Include="Assets\Scripts\ProjectileStun.cs" />
     <Compile Include="Assets\Scripts\Projectilee.cs" />
     <Compile Include="Assets\Scripts\Shooter.cs" />
     <Compile Include="Assets\Scripts\StarDisplay.cs" />

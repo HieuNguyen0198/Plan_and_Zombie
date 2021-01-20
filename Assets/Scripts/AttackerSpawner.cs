@@ -20,18 +20,18 @@ public class AttackerSpawner : MonoBehaviour
             {
                 if (phase == 2)
                 {
-                    yield return new WaitForSeconds(Random.Range(minSpawnDelay,maxSpawnDelay));
+                    yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
                     SpawnAttacker();
                 }
                 else if (phase == 3)
                 {
-                    yield return new WaitForSeconds(Random.Range(1f, maxSpawnDelay - 3f));
+                    yield return new WaitForSeconds(Random.Range(1, maxSpawnDelay));
                     SpawnAttacker();
                 }
                 else
                 {
                     //phase 1
-                    yield return new WaitForSeconds(Random.Range(3f, 30f));
+                    yield return new WaitForSeconds(Random.Range(5f, 20f));
                     SpawnAttacker();
                 }
             }

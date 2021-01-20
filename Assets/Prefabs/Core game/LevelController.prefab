@@ -48,6 +48,9 @@ MonoBehaviour:
   waitToLoad: 4
   winLabel: {fileID: 0}
   loseLabel: {fileID: 0}
+  finalLabel: {fileID: 0}
+  menuLabel: {fileID: 0}
+  endGame: 1
 --- !u!82 &1047901140
 AudioSource:
   m_ObjectHideFlags: 0

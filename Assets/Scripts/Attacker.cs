@@ -8,7 +8,6 @@ public class Attacker : MonoBehaviour
     [SerializeField] float speed;
     float currentSpeed = 1f;
     float defaultSpeed = 0;
-    bool attacking = false;
     GameObject currentTarget;
 
 
@@ -42,6 +41,7 @@ public class Attacker : MonoBehaviour
     {
         //defaultSpeed = speed;
         speed = defaultSpeed/2;
+        currentSpeed = speed;
         StartCoroutine(LateCall());
     }
     
@@ -100,7 +100,6 @@ public class Attacker : MonoBehaviour
             //attacking = false;
             return; 
         }
-        attacking = true;
         Health health = currentTarget.GetComponent<Health>();
         if(health)
         {

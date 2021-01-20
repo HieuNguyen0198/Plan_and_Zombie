@@ -22,7 +22,7 @@ public class Projectilee : MonoBehaviour
             health.DealDamage(damage);
 
             //lam cham hay stun o cho nay
-            attacker.SetStun();
+            //attacker.SetStun();
 
             //attacker.SetSlowMomentSpeed();
 
