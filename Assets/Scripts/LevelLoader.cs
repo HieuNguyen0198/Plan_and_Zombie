@@ -11,7 +11,7 @@ public class LevelLoader : MonoBehaviour
     void Start()
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if(currentSceneIndex == 0)
+        if (currentSceneIndex == 0)
         {
             StartCoroutine(WaitForTime());
         }
@@ -42,6 +42,12 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene("Start Screen 1");
     }
 
+    public void LoadMainMenuNotSaveLevel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Start Screen 1");
+    }
+
     public void LoadOptionScreen()
     {
         Time.timeScale = 1;
@@ -61,7 +67,15 @@ public class LevelLoader : MonoBehaviour
     public void loadCoutinueGame()
     {
         Time.timeScale = 1;
-        int saveLevel = PlayerPrefsController.GetLevel() - 1;
-        SceneManager.LoadScene(currentSceneIndex + saveLevel);
-    }    
-}
+        int saveLevel = PlayerPrefsController.GetLevel();
+        if (saveLevel != 0)
+        {
+            SceneManager.LoadScene(currentSceneIndex + saveLevel - 1);
+        }
+        else
+        {
+            SceneManager.LoadScene(currentSceneIndex + 1);
+        }
+    }
+
+}   

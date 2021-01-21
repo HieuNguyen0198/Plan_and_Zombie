@@ -36,7 +36,7 @@ public class OptioneController : MonoBehaviour
     {
         PlayerPrefsController.SetMasterVolume(volumeSlider.value);
         PlayerPrefsController.SetDifficulty(difficultySlider.value);
-        FindObjectOfType<LevelLoader>().LoadMainMenu();
+        FindObjectOfType<LevelLoader>().LoadMainMenuNotSaveLevel();
     }
 
     public void SetDefaults()
