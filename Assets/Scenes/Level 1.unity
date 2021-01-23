@@ -136,6 +136,14 @@ PrefabInstance:
       propertyPath: attackerPrefabArray.Array.data[0]
       value: 
       objectReference: {fileID: 959085747}
+    - target: {fileID: 1591969105, guid: 875e1c706360ebd4687c91242fee91da, type: 3}
+      propertyPath: minSpawnDelay
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591969105, guid: 875e1c706360ebd4687c91242fee91da, type: 3}
+      propertyPath: maxSpawnDelay
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 466947336681969813, guid: 875e1c706360ebd4687c91242fee91da,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -762,6 +770,14 @@ PrefabInstance:
       propertyPath: attackerPrefabArray.Array.data[0]
       value: 
       objectReference: {fileID: 959085747}
+    - target: {fileID: 1591969105, guid: 875e1c706360ebd4687c91242fee91da, type: 3}
+      propertyPath: minSpawnDelay
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591969105, guid: 875e1c706360ebd4687c91242fee91da, type: 3}
+      propertyPath: maxSpawnDelay
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 466947336681969813, guid: 875e1c706360ebd4687c91242fee91da,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1080,6 +1096,14 @@ PrefabInstance:
       propertyPath: attackerPrefabArray.Array.data[0]
       value: 
       objectReference: {fileID: 959085747}
+    - target: {fileID: 1591969105, guid: 875e1c706360ebd4687c91242fee91da, type: 3}
+      propertyPath: minSpawnDelay
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591969105, guid: 875e1c706360ebd4687c91242fee91da, type: 3}
+      propertyPath: maxSpawnDelay
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 466947336681969813, guid: 875e1c706360ebd4687c91242fee91da,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1573,6 +1597,14 @@ PrefabInstance:
       propertyPath: attackerPrefabArray.Array.data[0]
       value: 
       objectReference: {fileID: 959085747}
+    - target: {fileID: 1591969105, guid: 875e1c706360ebd4687c91242fee91da, type: 3}
+      propertyPath: minSpawnDelay
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591969105, guid: 875e1c706360ebd4687c91242fee91da, type: 3}
+      propertyPath: maxSpawnDelay
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 466947336681969813, guid: 875e1c706360ebd4687c91242fee91da,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1998,6 +2030,14 @@ PrefabInstance:
       propertyPath: attackerPrefabArray.Array.data[0]
       value: 
       objectReference: {fileID: 959085747}
+    - target: {fileID: 1591969105, guid: 875e1c706360ebd4687c91242fee91da, type: 3}
+      propertyPath: minSpawnDelay
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591969105, guid: 875e1c706360ebd4687c91242fee91da, type: 3}
+      propertyPath: maxSpawnDelay
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 466947336681969813, guid: 875e1c706360ebd4687c91242fee91da,
         type: 3}
       propertyPath: m_LocalPosition.x

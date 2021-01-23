@@ -77,5 +77,4 @@ public class LevelLoader : MonoBehaviour
             SceneManager.LoadScene(currentSceneIndex + 1);
         }
     }
-
 }   
