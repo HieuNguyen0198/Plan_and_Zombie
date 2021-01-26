@@ -1,5 +1,3 @@
-# Plan_and_Zombie
-# Plan_and_Zombie
 - Tác giả: Nguyễn Minh Hiếu - K16 - HCMUS
 - facebook: https://www.facebook.com/nguyen.hieu220198/
 - Mô tả: Game clone plants and zombies. Sử dụng unity C#.
