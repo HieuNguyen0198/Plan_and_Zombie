@@ -1,4 +1,4 @@
-- Tác giả: Nguyễn Minh Hiếu - K16 - HCMUS
+- Tác giả: Nguyễn Minh Hiếu - HCMUS
 - facebook: https://www.facebook.com/nguyen.hieu220198/
 - Mô tả: Game clone plants and zombies. Sử dụng unity C#.
 - Game có 18 level.
